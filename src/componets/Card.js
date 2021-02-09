@@ -1,3 +1,5 @@
+// dump component (because it does not know anything and just draw the element)
+
 const Card = (props) => {
     return (
         <div className="card">

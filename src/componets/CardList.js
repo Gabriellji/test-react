@@ -3,9 +3,11 @@ import data from "../data";
 import Card from "./Card";
 
 const CardList = () => {
-  const [state, setState] = useState("undefined");
-  // const [user, setUser] = useState('Zheniya')
 
+    // stte with hooks
+  const [state, setState] = useState("undefined"); //setState is a fn that allow us to change our state
+
+  // fn that finds element in the data array with element.target.id
   const clickHandler = (e) => {
     const res = data.results.find((el) => el.id == e.target.id);
     setState(res.name);
