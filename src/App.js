@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import data from './data';
+import CardList from './componets/CardList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import Counter from './componets/Counter';
+
+const App = () => {
+  
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+  }
+
+    return (
+      <div className="App">
+        <h1>Yo</h1>
+        <CardList {...data} />
+        <Counter count={count} onClick={increase}/>
+      </div>
+    );
 }
 
 export default App;
